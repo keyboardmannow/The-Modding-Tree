@@ -56,10 +56,29 @@ addLayer("l", {
                     description: "Multiplies oxytocin gain by 5.",
                     cost: new Decimal(5),
                     unlocked() { return hasUpgrade("l", 12) },
-
-
-            }
-    }
+            },
+            21: {
+                    title: "Romeo's Love",
+                    description: "Multiplies oxytocin gain by 10.",
+                    cost: 3,
+                    canAfford() {
+                        return player.r.points.gte(this.cost);
+                    },
+                    pay() {
+                        player.r.points = player.r.points.sub(this.cost) }
+             },
+            22: {
+                    title: "Julliet's Love",
+                    description: "Multiplies oxytocin gain by 10.",
+                    cost: 3,
+                    canAfford() {
+                        return player.j.points.gte(this.cost);
+                    },
+                    pay() {
+                        player.j.points = player.j.points.sub(this.cost)
+                    },
+            },
+    },
 })
 
 addLayer("r", {
@@ -98,6 +117,11 @@ addLayer("r", {
                     title: "Rosaline",
                     description: "Discover a beautiful girl by the name of Rosaline. x3 oxytocin gain.",
                     cost: new Decimal(1)
+            },
+            12: {
+                    title: "Mercutio",
+                    description: "Mercutio is Romeo's close friend. 2x oxytocin gain.",
+                    cost: new Decimal(2)
             },
         },
     

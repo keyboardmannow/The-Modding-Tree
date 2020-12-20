@@ -45,8 +45,11 @@ function getPointGen() {
 	if(hasUpgrade("l",11)) gain = gain.mul(2)
 	if(hasUpgrade("l",12)) gain = gain.mul(2)
 	if(hasUpgrade("l",13)) gain = gain.mul(5)
+	if(hasUpgrade("l",21)) gain = gain.mul(10)
+	if(hasUpgrade("l",21)) gain = gain.mul(10)
 	if(hasUpgrade("r",11)) gain = gain.mul(3)
 	if(hasUpgrade("j",11)) gain = gain.mul(3)
+	if(hasUpgrade("r",12)) gain = gain.mul(2)
 	return gain
 }
 
